@@ -1,0 +1,50 @@
+import json
+import uuid
+
+
+def generate_id_for_empty_fields(data):
+    # Use a dictionary to hold the updated data
+    updated_data = {}
+    
+    # Iterate through the dictionary items directly
+    for key in data:
+        value = data[key]
+        
+        # Check if the value is empty (None, empty string, or empty list)
+        if value == None or value == "" or value == []:
+            # Generate a unique ID for the empty field
+            updated_data[key] = {"id": str(uuid.uuid4()), "value": value}
+        # Check if the value is a dictionary, and call recursively
+        elif type(value) == dict:
+            updated_data[key] = generate_id_for_empty_fields(value)
+        # Check if the value is a list of dictionaries, and process each item
+        elif type(value) == list:
+            # For lists, we check each item individually
+            updated_list = []
+            for item in value:
+                # Assume each item is a dictionary and call recursively
+                updated_list.append(generate_id_for_empty_fields(item))
+            updated_data[key] = updated_list
+        # For non-empty values, retain them as is
+        else:
+            updated_data[key] = value
+
+    return updated_data
+
+# Load EPT JSON schema from a file (or you can define it directly in the code)
+with open('Datas/EPT.json', 'r') as file:
+    ept_data = json.load(file)
+   
+
+# Process the JSON data to generate IDs for empty fields
+updated_ept_data = generate_id_for_empty_fields(ept_data)
+
+# Save the updated data back to a file or print it
+with open('Datas/Updated_EPT.json', 'w') as file:
+    json.dump(updated_ept_data, file, indent=4)
+
+print(json.dumps(updated_ept_data, indent=4))
+
+
+
+generate_id_for_empty_fields("json_test_data.json")

@@ -36,3 +36,34 @@ print(item.all)
 
 for x in item.all:
     print(x.name)
+
+
+def Jass( n):
+    for x in range(0, n+1):
+       for y in range(0, x):
+           print('*', end=" ")
+       print()
+
+Jass(5)
+
+# Animal= ["Lion", "Cat", "Tigers"]
+# for x in Animal:
+#     Animal.append("Some")
+#     print(x)
+# print('..........')
+
+
+House={
+    "min":90,
+    "sec":40,
+    "time":50,
+    "dat":["Lon", "Fin","Kou"],
+}
+House.update({"form":["SOSH", "TERV"]})
+
+for key, index in House.items():
+    print(key, index)
+print('***********')
+
+for key in House.get('dat'):
+    print(key)

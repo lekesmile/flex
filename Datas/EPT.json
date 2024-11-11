@@ -1,0 +1,18 @@
+{
+    "name": "Product A",
+    "description": {
+        "id": "effa6bba-99c6-472d-bacb-1de377e0c321",
+        "value": ""
+    },
+    "details": {
+        "manufacturer": {
+            "id": "f3d3199b-6ccf-4533-8da6-617d26221f55",
+            "value": ""
+        },
+        "warranty": "2 years"
+    },
+    "tags": {
+        "id": "6d09ee88-4d0c-4878-93b7-ce834b81ce68",
+        "value": []
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "name": "Product A",
+    "description": {
+        "id": "effa6bba-99c6-472d-bacb-1de377e0c321",
+        "value": {
+            "id": "141e1c13-167d-4f8c-9f2d-f762db5cd1d0",
+            "value": ""
+        }
+    },
+    "details": {
+        "manufacturer": {
+            "id": "f3d3199b-6ccf-4533-8da6-617d26221f55",
+            "value": {
+                "id": "4b2112b8-3110-461d-ae1c-77792a4edf28",
+                "value": ""
+            }
+        },
+        "warranty": "2 years"
+    },
+    "tags": {
+        "id": "6d09ee88-4d0c-4878-93b7-ce834b81ce68",
+        "value": {
+            "id": "b783b3d8-36b7-487f-8cc7-773523fff6a8",
+            "value": []
+        }
+    }
+}
